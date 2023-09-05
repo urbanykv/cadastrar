@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Cadastrar Pessoa</title>
+</head>
+<body> 
+    <section class="formulario">
+            <label for="nome">Nome Completo</label>
+            <input type="text" name="nome" id="nome" placeholder="Escreva seu nome">
+            <label for="dataN">Data de Nascimento</label>
+            <input type="date" name="dataN" id="dataN">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Escreva seu email">
+            <label for="ecivil">Estado Civil</label>
+            <select id="ecivil">
+                <option value="sel" selected>Selecione</option>
+                <option value="Solteiro(a)">Solteiro(a)</option>
+                <option value="Casado(a)">Casado(a)</option>
+                <option value="Divorciado(a)">Divorciado(a)</option>
+            </select>
+            <button type="submit" id="enviar">Enviar</button>
+            <div class="listagem-cadastrados">
+                <ul>
+                    
+                </ul>
+            </div>
+    </section>
+    <script src="./src/js/script.js"></script>
+</body>
+</html>

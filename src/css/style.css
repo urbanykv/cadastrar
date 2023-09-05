@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+.formulario{
+    padding: 35px 0px;
+    width: 55%;
+    height: 50vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(255, 224, 224);
+}
+
+#nome{
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#email{
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#dataN{
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#ecivil{
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+button{
+    width: 90px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(80, 255, 80);
+    margin-top: 15px;
+}

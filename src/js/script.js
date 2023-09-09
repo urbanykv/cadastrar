@@ -6,7 +6,45 @@ const buttonEnviar = document.querySelector('#enviar');
 const listaCadastrados = document.querySelector('ul')
 
 
+
+const buttonRemover = document.createElement('button')
+
 let pessoasCadastradas = JSON.parse(localStorage.getItem('pessoasCadastradas')) || [];
+
+function remover(){
+
+}
+
+function renderizar(){
+    listaCadastrados.innerHTML = '';
+
+    for(let pessoa of pessoasCadastradas){
+    const itemLista = document.createElement('li');
+
+    const pNome = document.createElement('p')
+    const pData = document.createElement('p')
+    const pEmail = document.createElement('p')
+    const pEcivil = document.createElement('p')
+
+    const textoNomeRender = document.createTextNode('Nome Completo: ' + pessoa.nome)
+    const textoDataRender = document.createTextNode('Data de Nascimento: ' + pessoa.dataNascimento)
+    const textoEmailRender = document.createTextNode('Email: ' + pessoa.email)
+    const textoEcivilRender = document.createTextNode('Estado Cívil: ' + pessoa.estadoCivil)
+
+    pNome.appendChild(textoNomeRender);
+    pData.appendChild(textoDataRender);
+    pEmail.appendChild(textoEmailRender);
+    pEcivil.appendChild(textoEcivilRender);
+
+    itemLista.appendChild(pNome)
+    itemLista.appendChild(pData)
+    itemLista.appendChild(pEmail)
+    itemLista.appendChild(pEcivil)
+    listaCadastrados.appendChild(itemLista);
+    }
+    salvarDadosNoStorage()
+}
+renderizar()
 
 buttonEnviar.addEventListener('click', function(){
     if(nome.value !== '' && dataNascimento.value !== 'dd/mm/aaaa' && email.value !== '' && ecivil.value !== 'sel'){
@@ -17,42 +55,11 @@ buttonEnviar.addEventListener('click', function(){
         cadastroNovo.estadoCivil = ecivil.value;
         pessoasCadastradas.unshift(cadastroNovo)
         console.log(pessoasCadastradas);
-
-        function renderizar(){
-            listaCadastrados.innerHTML = '';
-
-            for(let pessoa of pessoasCadastradas){
-            const itemLista = document.createElement('li');
-
-
-            const pNome = document.createElement('p')
-            const pData = document.createElement('p')
-            const pEmail = document.createElement('p')
-            const pEcivil = document.createElement('p')
-
-            const textoNomeRender = document.createTextNode('Nome Completo: ' + pessoa.nome)
-            const textoDataRender = document.createTextNode('Data de Nascimento: ' + pessoa.dataNascimento)
-            const textoEmailRender = document.createTextNode('Email: ' + pessoa.email)
-            const textoEcivilRender = document.createTextNode('Estado Cívil: ' + pessoa.estadoCivil)
-
-
-
-            pNome.appendChild(textoNomeRender);
-            pData.appendChild(textoDataRender);
-            pEmail.appendChild(textoEmailRender);
-            pEcivil.appendChild(textoEcivilRender);
-
-
-
-            itemLista.appendChild(pNome)
-            itemLista.appendChild(pData)
-            itemLista.appendChild(pEmail)
-            itemLista.appendChild(pEcivil)
-            listaCadastrados.appendChild(itemLista);
-            }
-            salvarDadosNoStorage()
-        }
         renderizar()
+        nome.value = '';
+        dataNascimento.value = '';
+        email.value = '';
+        ecivil.value = '';
     }else{
         
     }

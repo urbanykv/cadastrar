@@ -68,4 +68,5 @@ button{
     padding: 5px;
     background-color: rgb(80, 255, 80);
     margin-top: 15px;
+    cursor: pointer;
 }
